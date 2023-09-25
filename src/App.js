@@ -3,11 +3,10 @@ import "./App.css";
 import { useState, useReducer } from "react";
 
 import resultReducer from "./reducers/resultReducer";
-
+import Buttonui from "./components/Buttonui";
 function App() {
 	const [firstNumberInput, setFirstNumberInput] = useState(null);
 	const [secondNumberInput, setSecondNumberInput] = useState(null);
-	const [result, setResult] = useState(null);
 
 	const [result2, dispatch] = useReducer(resultReducer, 10);
 
@@ -77,18 +76,13 @@ function App() {
 					value={secondNumberInput}
 					onChange={(e) => setSecondNumberInput(e.target.value)}
 				/>
-
-				<button onClick={handleSumClick}>sum</button>
-
-				<button onClick={handleSubClick}>subtract</button>
-
-				<button onClick={handleMultClick}>multiply</button>
-
-				<button onClick={handleDivClick}>divide</button>
+				
+				<button onClick={handleSumClick}><Buttonui opreation = "sum"/></button>
+				<button onClick={handleSubClick}><Buttonui opreation = "subtract"/></button>
+				<button onClick={handleMultClick}><Buttonui opreation = "multiply"/></button>
+				<button onClick={handleDivClick}><Buttonui opreation = "divide"/></button>
 
 				<hr />
-
-				<h2>{result}</h2>
 
 				<h2>{result2}</h2>
 			</div>
